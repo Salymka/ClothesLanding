@@ -1,0 +1,19 @@
+.line__path {
+  fill: none;
+  stroke: blueviolet;
+  stroke-width: 6px;
+
+  stroke-dasharray: 2100px;
+  stroke-dashoffset: 2100px;
+  animation: move 2s normal ease-in forwards;
+}
+
+
+
+@keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+
+}

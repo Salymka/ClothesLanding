@@ -1,0 +1,122 @@
+@font-face {
+  font-family: FatFont;
+  src: url('../../../fonts/FREEFATFONT-Slanted.woff');
+}
+
+.container1 {
+  position: relative;
+  height: 750px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.animated__line {
+  position: absolute;
+  top: 0;
+}
+
+.container1__content {
+  position: relative;
+  width: 1160px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+
+.container1__text {
+  position: absolute;
+  bottom: 0;
+  width: 550px;
+  height: max-content;
+
+  font-family: 'Oswald',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 122px;
+
+  animation-duration: 2.5s;
+
+  .inner__text_transform {
+    margin-left: 30px;
+    display: inline-block;
+    transform: rotate(10deg);
+  }
+}
+
+.container1__text_animation:hover {
+  animation-name: scaleText;
+  animation-timing-function: ease;
+
+  .inner__text_transform {
+    animation: rotateText ease 2.3s;
+  }
+}
+
+.inner__text {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  padding: 0 10px;
+  border-radius: 9px;
+
+  font-family: 'Oswald', sans-serif;
+  background-color: #BAFD37;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 90px;
+  line-height: 100px;
+
+  color: #000000;
+}
+
+.inner__text_appendix {
+  position: relative;
+  left: -13px;
+  top: -25px;
+}
+
+.background__mask {
+  position: absolute;
+  width: 500px;
+  right: 60px;
+  top: -30px;
+
+  font-family: FatFont, cursive;
+  font-size: 390px;
+  line-height: 0.65;
+
+  background-size: auto 750px;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  pointer-events: none;
+
+  transition: background-image 1s linear;
+}
+
+@keyframes scaleText {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(220deg);
+  }
+  100% {
+    transform: rotate(370deg);
+  }
+}
+
+

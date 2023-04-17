@@ -1,0 +1,41 @@
+.platforms {
+  position: absolute;
+  top: -10px;
+}
+
+.platforms {
+  position: absolute;
+  top: -10px;
+}
+
+.platforms__icons {
+  display: flex;
+}
+
+.platforms__apple,
+.platforms__android {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #E1E3E9;
+  background: #2D3240;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.platforms__android {
+  position: relative;
+  left: -12px;
+}
+
+.platforms__description {
+  margin-top: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+}
