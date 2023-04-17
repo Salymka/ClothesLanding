@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './NavBar.scss'
 import {NavLink} from "react-router-dom";
-import {landingPage} from "../../pages/router";
+import {clothesPage, landingPage} from "../../pages/router";
 
 const BTN_ANIMATION_TIME = 1000;
 const NavBar = () => {
@@ -31,7 +31,7 @@ const NavBar = () => {
             <div className={styles.navbar__wrapper}>
                 <div className={`${styles.navbar__links} ${burgerMenuOpen ? styles.navbar__links_active : ''}`}>
 
-                    <NavLink to={landingPage} className={styles.navbar__link}>
+                    <NavLink to={clothesPage} className={styles.navbar__link}>
                         {`Clothes`}
                     </NavLink>
                     <NavLink to={landingPage} className={styles.navbar__link}>
