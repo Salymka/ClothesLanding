@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import styles from './Container1.scss'
+import styles from './HeaderSection.scss'
 import BlueLine from "../../../svg/BlueLine/BlueLine";
 import Platforms from "../Platforms/Platforms";
-const Container1 = () => {
+
+const TIMEOUT = 8000;
+const HeaderSection = () => {
     const images = importAll(require.context('../../../static', false, /\.(png|jpe?g|svg)$/))
     const [currentImgIndex, setCurrentImgIndex] = useState(0)
     const backgroundTextImg = {backgroundImage: `url('${images[currentImgIndex].default}')`}
@@ -16,36 +18,36 @@ const Container1 = () => {
                 setCurrentImgIndex(0)
             }
             setCurrentImgIndex(flag => flag + 1)
-        }, 8000)
+        }, TIMEOUT)
     }, [currentImgIndex])
 
     return (
-        <div className={styles.container1}>
+        <div className={styles.headerSection}>
             <div className={styles.animated__line}>
                 <BlueLine/>
             </div>
-            <div className={styles.container1__content}>
+            <div className={styles.headerSection__content}>
                 <Platforms/>
-                <div className={`${styles.container1__text} ${styles.container1__text_animation}`}>
+                <h1 className={styles.background__mask} style={backgroundTextImg}>
+                    {`CR\nEA\nTE`}
+                </h1>
+                <div className={`${styles.headerSection__text} ${styles.headerSection__text_animation}`}>
                     CHOOSE YOUR WINTER
-                    <label className={`${styles.inner__text_transform}`}>
-                        <label className={styles.inner__text}>
+                    <span className={`${styles.inner__text_transform}`}>
+                        <span className={styles.inner__text}>
                             LOOK
-                        </label>
-                        <label className={styles.inner__text_appendix}>
+                        </span>
+                        <span className={styles.inner__text_appendix}>
                             {`*`}
-                        </label>
-                    </label>
+                        </span>
+                    </span>
                     <p>
                         APPAREL
                     </p>
                 </div>
-                <h1 className={styles.background__mask} style={backgroundTextImg}>
-                    {`CR\nEA\nTE`}
-                </h1>
             </div>
         </div>
     );
 };
 
-export default Container1;
+export default HeaderSection;

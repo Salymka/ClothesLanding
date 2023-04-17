@@ -3,10 +3,6 @@
   top: -10px;
 }
 
-.platforms {
-  position: absolute;
-  top: -10px;
-}
 
 .platforms__icons {
   display: flex;
@@ -38,4 +34,20 @@
   line-height: 21px;
 
   color: #000000;
+}
+
+@media (max-width: 1400px) {
+  .platforms {
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .platforms__description {
+    margin: 0;
+  }
+
+
 }

@@ -1,15 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './NavBar.scss'
 import {NavLink} from "react-router-dom";
 import {landingPage} from "../../pages/router";
+
+const BTN_ANIMATION_TIME = 1000;
 const NavBar = () => {
+    const [btnAnimationPlay, setBtnAnimationPlay] = useState(false)
+    const [burgerMenuOpen, setBurgerMenuOpen] = useState(true)
+
+    function btnPlay() {
+        setBtnAnimationPlay(true);
+        setTimeout(() => setBtnAnimationPlay(false), BTN_ANIMATION_TIME);
+    }
+
     return (
         <div className={`${styles.navbar}`}>
-            <div className={styles.navbar__logo}>
-                {`LANDING`}
-            </div>
+            <NavLink to={landingPage} className={styles.navbar__logo}>
+                <div>
+                    {`LANDING`}
+                </div>
+            </NavLink>
+            <button
+                className={`${styles.navbar__burgerMenu} ${burgerMenuOpen ? styles.navbar__burgerMenu_active : ''}`}
+                onClick={() => setBurgerMenuOpen(prev => !prev)}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div className={styles.navbar__wrapper}>
-                <div className={styles.navbar__links}>
+                <div className={`${styles.navbar__links} ${burgerMenuOpen ? styles.navbar__links_active : ''}`}>
+
                     <NavLink to={landingPage} className={styles.navbar__link}>
                         {`Clothes`}
                     </NavLink>
@@ -23,10 +44,16 @@ const NavBar = () => {
                         {`Accessorize`}
                     </NavLink>
                 </div>
-                <button className={styles.navbar__button}>
+                <button
+                    onClick={btnPlay}
+                    className={`${styles.navbar__button} ${btnAnimationPlay ? styles.btnPlayAnimation : ''}`}
+                    disabled={btnAnimationPlay}
+                >
                     <p>
                         {`BUY`}
                     </p>
+                    <span>
+                    </span>
                 </button>
 
             </div>

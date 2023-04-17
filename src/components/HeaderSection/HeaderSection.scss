@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 @font-face {
   font-family: FatFont;
   src: url('../../../fonts/FREEFATFONT-Slanted.woff');
 }
 
-.container1 {
+@font-face {
+  font-family: FatFont2;
+  src: url('../../../fonts/FREEFATFONT-Regular.woff');
+}
+
+.headerSection {
   position: relative;
   height: 750px;
   width: 100%;
@@ -15,7 +22,7 @@
   top: 0;
 }
 
-.container1__content {
+.headerSection__content {
   position: relative;
   width: 1160px;
   height: 100%;
@@ -23,13 +30,13 @@
 }
 
 
-.container1__text {
+.headerSection__text {
   position: absolute;
   bottom: 0;
   width: 550px;
   height: max-content;
 
-  font-family: 'Oswald',sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 80px;
@@ -44,7 +51,7 @@
   }
 }
 
-.container1__text_animation:hover {
+.headerSection__text_animation:hover {
   animation-name: scaleText;
   animation-timing-function: ease;
 
@@ -95,6 +102,74 @@
   transition: background-image 1s linear;
 }
 
+
+
+
+@media (max-width: 1400px) {
+  .headerSection {
+    height: max-content;
+    width: 400px;
+    margin-top: 40px;
+  }
+
+  .animated__line {
+    display: none;
+  }
+
+  .headerSection__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 80px auto 0;
+  }
+
+  .background__mask {
+    margin-top: 120px;
+    position: relative;
+    width: 400px;
+    left: 0;
+    text-align: center;
+    font-family: FatFont2, cursive;
+    font-size: 280px;
+
+    background-size: auto 550px;
+  }
+
+
+  .headerSection__text {
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    font-size: 70px;
+    line-height: 80px;
+    text-align: center;
+
+  }
+
+  .headerSection__text_animation:hover {
+    animation-name: bellsText;
+    animation-timing-function: ease-in-out;
+
+    .inner__text_transform {
+      animation: rotateText ease 2.3s;
+    }
+  }
+
+  .inner__text {
+    padding: 0 6px;
+
+    font-size: 60px;
+    line-height: 100px;
+
+  }
+
+  .inner__text_appendix {
+    position: relative;
+    left: -13px;
+    top: -25px;
+  }
+}
+
 @keyframes scaleText {
   0% {
     transform: scale(1);
@@ -105,6 +180,28 @@
   100% {
     transform: scale(1);
   }
+}
+@keyframes bellsText {
+  0% {
+    transform: rotate(0);
+  }
+  12.5% {
+    transform: rotate(10deg);
+  }
+  37.5% {
+    transform: rotate(-10deg);
+  }
+  62.5% {
+    transform: rotate(10deg);
+  }
+  87.5% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+
+
 }
 
 @keyframes rotateText {
@@ -118,5 +215,4 @@
     transform: rotate(370deg);
   }
 }
-
 

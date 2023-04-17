@@ -111,3 +111,50 @@
   }
 }
 
+
+@media (max-width: 1400px) {
+
+  .slider__row {
+    width: 100%;
+  }
+
+  .slider__item {
+    width: 260px;
+    padding: 0 20px;
+  }
+
+  .slider__item_hidden {
+    height: 330px;
+    width: 220px;
+  }
+
+  .btn__before,
+  .btn__next {
+
+    background: #2D3240;
+  }
+
+  .btn__next {
+    right: 2px;
+
+    &::after {
+      background: #FFFFFF;
+    }
+
+    &::before {
+      background: #FFFFFF;
+    }
+  }
+
+  .btn__before {
+    left: 2px;
+
+    &::after {
+      background: #FFFFFF;
+    }
+
+    &::before {
+      background: #FFFFFF;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styles from './Slider.scss'
+
+const PARENT_ELEMENT_WIDTH = 100 // 100%
 const Slider = () => {
     const images = importAll(require.context('../../../static', false, /\.(png|jpe?g|svg)$/))
     const [mudslidePosition, setMudslidePosition] = useState(setPosition(3));
@@ -8,30 +10,30 @@ const Slider = () => {
         return r.keys().map(r);
     }
     function firstPosition() {
-        return -100 / images.length / 2
+        return - PARENT_ELEMENT_WIDTH / images.length / 2
     }
     function lastPosition() {
-        return -100 * (2 * images.length - 1) / (2 * images.length)
+        return - PARENT_ELEMENT_WIDTH * (2 * images.length - 1) / (2 * images.length)
     }
 
     function setPosition(position) {
         if (position <= 0 || position > images.length) {
             return firstPosition()
         }
-        return -100 * (2 * position - 1) / (2 * images.length)
+        return - PARENT_ELEMENT_WIDTH * (2 * position - 1) / (2 * images.length)
     }
 
     const nextSlide = () => {
         if (Math.round(+mudslidePosition) === Math.round(lastPosition())) {
             return setMudslidePosition(firstPosition())
         }
-        setMudslidePosition(currentPosition => currentPosition - 100 / images.length)
+        setMudslidePosition(currentPosition => currentPosition - PARENT_ELEMENT_WIDTH / images.length)
     }
     const lastSlide = () => {
         if (Math.round(+mudslidePosition) === Math.round(firstPosition())) {
             return setMudslidePosition(lastPosition())
         }
-        setMudslidePosition(currentPosition => currentPosition + 100 / images.length)
+        setMudslidePosition(currentPosition => currentPosition + PARENT_ELEMENT_WIDTH / images.length)
     }
 
     return (
