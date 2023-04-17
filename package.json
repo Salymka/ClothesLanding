@@ -1,5 +1,5 @@
 {
-  "name": "fake-coursera",
+  "name": "clothes-landing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "webpack-dev-server .",
-    "build": "webpack .",
-    "test": "jest",
-    "coverage": "jest --coverage"
+    "build": "webpack ."
+
   },
   "keywords": [],
   "author": "",
